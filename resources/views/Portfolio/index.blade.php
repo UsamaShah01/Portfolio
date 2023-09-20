@@ -53,8 +53,8 @@
         <div class="container">
             <div class="disply-table">
                 <div class="table-cell" data-aos="fade-up" data-aos-delay="0">
-                    <h4>Ahmed Eissa</h4>
-                    <h1>Ui &<br /> Ux Designer</h1> </div>
+                    <h4>Muntha</h4>
+                    <h1> Ux Designer</h1> </div>
             </div>
         </div>
     </div>
@@ -64,11 +64,12 @@
     <div class="section" id="about">
         <div class="container">
             <div class="col-md-6" data-aos="fade-up">
-                <h4>01</h4>
+                
                 <h1 class="size-50">Know <br /> About me</h1>
                 <div class="h-50"></div>
-                <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value.</p>
+                <p>Hello, i'm muntha.</p>
+                <p> Welcome to my student portfolio! If you’re searching for recent work, check out: (LINK)</p>
+                <p>The world is constantly evolving thanks to designers centering their process around the user. Creatives design an experience through a series of touch-points that form the framework to have a meaningful interaction. It starts with understanding what the user needs, and ideating an innovative solution to fulfill it.</p>
                 <div class="h-50"></div> <img src="{{asset('/portfolio/img/Signature.svgs')}}" width="230" alt="" />
                 <div class="h-50"></div>
             </div>
@@ -81,7 +82,7 @@
     <!-- ./about -->
     
     <!-- experience  -->
-    <div class="section" id="experience">
+    <!-- <div class="section" id="experience">
         <div class="container">
             <div class="col-md-12">
                 <h4>02</h4>
@@ -122,7 +123,7 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- ./experience -->
     
     <!-- projects -->
@@ -142,11 +143,8 @@
                             <nav class="categories">
                                 <ul class="portfolio_filter">
                                     <li><a href="" class="active" data-filter="*">All</a></li>
-                                    <li><a href="" data-filter=".photography">Photography</a></li>
-                                    <li><a href="" data-filter=".logo">Logo</a></li>
-                                    <li><a href="" data-filter=".graphics">Graphics</a></li>
-                                    <li><a href="" data-filter=".ads">Advertising</a></li>
-                                    <li><a href="" data-filter=".fashion">Fashion</a></li>
+                                    <li><a href="{{url('/case/study')}}" data-filter=".photography">Case Study </a></li>
+                                    <li><a href="" data-filter=".logo">Projects</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -155,7 +153,7 @@
                         <!-- portfolio_container -->
                         <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
                             <!-- single work -->
-                            <div class="col-md-4 col-sm-6  fashion logo">
+                            <div class="col-md-4 col-sm-6  photography">
                                 <a id="demo01" href="#animatedModal" class="portfolio_item"> <img src="{{asset('/portfolio/img/portfolio/01.jpg')}}" alt="image" class="img-responsive" />
                                     <div class="portfolio_item_hover">
                                         <div class="portfolio-border clearfix">
@@ -167,7 +165,7 @@
                             <!-- end single work -->
                             
                             <!-- single work -->
-                            <div class="col-md-4 col-sm-6 ads graphics">
+                            <div class="col-md-4 col-sm-6 ads logo">
                                 <a id="demo02" href="#animatedModal" class="portfolio_item"> <img src="{{asset('/portfolio/img/portfolio/03.jpg')}}" alt="image" class="img-responsive" />
                                     <div class="portfolio_item_hover">
                                         <div class="portfolio-border clearfix">
