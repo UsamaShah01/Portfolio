@@ -16,9 +16,10 @@
         <div class="row">
             <div class="col-md-12"> <Center><h1>ADMIN PANEL</h1></Center> </div>
         </div>
+
         <div class="row">
-        <div class="col-md-2">
-        <div class="list-group">
+         <div class="col-md-2">
+            <div class="list-group">
              <a href="/dashboard" class="list-group-item list-group-item-action active" aria-current="true">
                 Dasboard
             </a>
@@ -35,44 +36,73 @@
         </div>
 
         <div class="col-md-8">
-        <form action="{{route('storecasestudy')}}" method="POST" enctype="multipart/form-data">
+
+
+              <form action="{{route('storecasestudy')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
+                       <div class="alert alert-danger">
+                     <ul>
+                  @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
-            @endforeach
-                </ul>
-            </div>
-        @endif
-        <div class="mb-3">
+                  @endforeach
+                     </ul>
+                          </div>
+                      @endif
+            <div class="mb-3">
             <label for="exampleInputEmail1" class="form-label">Title</label>
             <input type="text" name="title" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
            
-        </div>
+            </div>
     
-        <div class="mb-3" >
+            <div class="mb-3" >
             <label for="exampleFormControlTextarea1" class="form-label">Content</label>
             <textarea id="editor" name="content" class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
             </div>
 
             <div>
-        <label for="formFileLg" class="form-label">Upload Image</label>
-        <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
-        </div>
+            <label for="formFileLg" class="form-label">Upload Image</label>
+                <input class="form-control form-control-lg" id="formFileLg" type="file" name="image">
+            </div>
         
-        <br>
-        <div>
-        <label for="formFileLg" class="form-label">Upload PDF</label>
-        <input class="form-control form-control-lg" id="formFileLg" type="file" name="pdf">
-        </div>
-        <br>
-        <br>
-        <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-        </div>
+                 <br>
+            <div>
+            <label for="formFileLg" class="form-label">Upload PDF</label>
+            <input class="form-control form-control-lg" id="formFileLg" type="file" name="pdf">
+            </div>
+            <br>
+            <br>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            <br>
+            <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th scope="row">SR</th>
+                <td>Title</td>
+                <td>Image</td>
+                <td>PDF</td>
+                <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($casestudys as $casestudy)
+            <tr>
+                <th scope="row">{{$casestudy->id}}</th>
+                <td>{{$casestudy->title}}</td>
+                <td>{{$casestudy->image}}</td>
+                <td>{{$casestudy->Pdf}}</td>
+                <td><a href="/delete/store/case/study/{{$casestudy->id}}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+            </table>
+            </div>
+
+
+            
+       
         </div>
       
     </div>

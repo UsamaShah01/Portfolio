@@ -31,6 +31,9 @@
                             @csrf
              <button  class="btn btn-block btn-danger" >Log out</button>
              </form>
+
+             <br>
+             
 </div>
         </div>
         </div>
@@ -75,6 +78,30 @@
        
         <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        <br>
+        <br>
+        <table class="table">
+            <thead class="table-dark">
+            <tr>
+                <th scope="row">SR</th>
+                <td>Title</td>
+                <td>Image</td>
+                <td>Figma Link</td>
+                <td>Action</td>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($projects as $project)
+            <tr>
+                <th scope="row">{{$project->id}}</th>
+                <td>{{$project->title}}</td>
+                <td>{{$project->image}}</td>
+                <td>{{$project->link}}</td>
+                <td><a href="/delete/project/{{$project->id}}" class="btn btn-danger">Delete</a></td>
+                </tr>
+                @endforeach
+            </tbody>
+            </table>
         </div>
         </div>
       

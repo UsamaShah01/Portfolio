@@ -29,10 +29,12 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/case/study',[AdminController::class, 'caseStudy'])->name('casestudy');
     Route::post('/store/case/study',[AdminController::class, 'store'])->name('storecasestudy');
+    Route::get('/delete/store/case/study/{id}',[AdminController::class, 'delete'])->name('deletestorecasestudy');
 
         
     Route::get('/project',[AdminController::class, 'project'])->name('project');
     Route::post('/store/project',[AdminController::class, 'storeProject'])->name('storeproject');
+    Route::get('/delete/project/{id}',[AdminController::class, 'deleteProject'])->name('deleteproject');
 });
 
 

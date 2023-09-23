@@ -11,7 +11,9 @@ class AdminController extends Controller
 {
     //
     public function caseStudy(){
-        return view('portfolio.admin.casestudy');
+        $casestudys = CaseStudy::all();
+       
+        return view('portfolio.admin.casestudy',compact('casestudys'));
     }
 
     public function store(Request $request){
@@ -41,7 +43,8 @@ class AdminController extends Controller
     }
 
     public function project(){
-        return view('portfolio.admin.porject');
+        $projects = Project::all();
+        return view('portfolio.admin.porject',compact('projects'));
     }
 
     public function storeProject(Request $request){
@@ -63,5 +66,17 @@ class AdminController extends Controller
         $caseStudy->save();
         
         return back()->with('success', 'Case study created successfully.');
+    }
+
+    public function delete($id){
+        CaseStudy::where('id',$id)->delete();
+
+        return back()->with('success', 'Deleted Sucesssfully.');
+    }
+
+    public function deleteProject($id){
+        Project::where('id',$id)->delete();
+
+        return back()->with('success', 'Deleted Sucesssfully.');
     }
 }
