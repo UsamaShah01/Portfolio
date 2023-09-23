@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,9 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('portfolio.index');
-});
+Route::get('/', [MainController::class,'index']);
 
 Route::get('/dashboard', function () {
     return view('portfolio.Admin.dashboard');
@@ -30,6 +29,14 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/case/study',[AdminController::class, 'caseStudy'])->name('casestudy');
     Route::post('/store/case/study',[AdminController::class, 'store'])->name('storecasestudy');
+
+        
+    Route::get('/project',[AdminController::class, 'project'])->name('project');
+    Route::post('/store/project',[AdminController::class, 'storeProject'])->name('storeproject');
 });
+
+
+Route::get('single/page/{id}',[MainController::class,'singleCasePage'])->name('single.case.page');
+Route::get('single/project/{id}',[MainController::class,'singleProject'])->name('single.project.page');
 
 require __DIR__.'/auth.php';

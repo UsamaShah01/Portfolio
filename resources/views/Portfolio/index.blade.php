@@ -39,10 +39,10 @@
     <header class="navbar-fixed-top">
         <nav>
             <ul>
-                <li><a href="#about">About</a></li>
-                <li><a href="#experience">experience</a></li>
-                <li><a href="#projects">projects</a></li>
-                <li><a href="#contact">contact</a></li>
+                <li><a href="#about" style="color:white">About</a></li>
+                <li><a href="#experience" style="color:white">experience</a></li>
+                <li><a href="#projects" style="color:white">projects</a></li>
+                <li><a href="#contact" style="color:white">contact</a></li>
             </ul>
         </nav>
     </header>
@@ -52,9 +52,9 @@
     <div class="section" id="home" data-stellar-background-ratio="0.5">
         <div class="container">
             <div class="disply-table">
-                <div class="table-cell" data-aos="fade-up" data-aos-delay="0">
-                    <h4>Muntha</h4>
-                    <h1> Ux Designer</h1> </div>
+                <div class="table-cell" data-aos="fade-up" data-aos-delay="0.5">
+                    <h1 style="color:white"> Ux Designer</h1> 
+                    <h4 style="color:yellow">>Muntha</h4></div>
             </div>
         </div>
     </div>
@@ -131,11 +131,12 @@
         <div class="container">
             <div class="col-md-12">
                 <h4>03</h4>
-                <h1 class="size-50">My <br /> Projects</h1> 
+                <h1 class="size-50">My <br /> Portfolio</h1> 
             </div>
             <!-- main container -->
             <div class="main-container portfolio-inner clearfix">
                 <!-- portfolio div -->
+               
                 <div class="portfolio-div">
                     <div class="portfolio">
                         <!-- portfolio_filter -->
@@ -143,7 +144,7 @@
                             <nav class="categories">
                                 <ul class="portfolio_filter">
                                     <li><a href="" class="active" data-filter="*">All</a></li>
-                                    <li><a href="{{url('/case/study')}}" data-filter=".photography">Case Study </a></li>
+                                    <li><a href="" data-filter=".photography">Case Study </a></li>
                                     <li><a href="" data-filter=".logo">Projects</a></li>
                                 </ul>
                             </nav>
@@ -154,25 +155,33 @@
                         <div class="no-padding portfolio_container clearfix" data-aos="fade-up">
                             <!-- single work -->
                             <div class="col-md-4 col-sm-6  photography">
-                                <a id="demo01" href="#animatedModal" class="portfolio_item"> <img src="{{asset('/portfolio/img/portfolio/01.jpg')}}" alt="image" class="img-responsive" />
+                            @foreach($casestudy as $case)
+                                <a href="/single/page/{{ $case->id }}"  class="portfolio_item">
+                                    <img src="{{ asset('uploads/image/' . $case->image )}}" alt="image" class="img-responsive" />
                                     <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Mockups in seconds</span> <em>Fashion / Logo</em> </div>
+                                        <div class="portfolio-border clearfix mt-5">
+                                            <div class="item_info"> <span>{{ $case->title}}</span> <button href="" class="btn btn-primary"> Detail</button></div>
+                                            
                                         </div>
                                     </div>
                                 </a>
+                                @endforeach
                             </div>
                             <!-- end single work -->
                             
                             <!-- single work -->
                             <div class="col-md-4 col-sm-6 ads logo">
-                                <a id="demo02" href="#animatedModal" class="portfolio_item"> <img src="{{asset('/portfolio/img/portfolio/03.jpg')}}" alt="image" class="img-responsive" />
+                            @foreach($projects as $project)
+                                <a href="/single/project/{{ $project->id }}"  class="portfolio_item">
+                                    <img src="{{ asset('uploads/image/' . $project->image )}}" alt="image" class="img-responsive" />
                                     <div class="portfolio_item_hover">
-                                        <div class="portfolio-border clearfix">
-                                            <div class="item_info"> <span>Floating mockups</span> <em>Ads / Graphics</em> </div>
+                                        <div class="portfolio-border clearfix mt-5">
+                                            <div class="item_info"> <span>{{ $project->title}}</span> <button class="btn btn-primary"> Detail</button></div>
+                                            
                                         </div>
                                     </div>
                                 </a>
+                                @endforeach
                             </div>
                             <!-- end single work -->
                         
@@ -237,30 +246,7 @@
     <!-- ./contact -->
 
     <!--DEMO01-->
-    <div id="animatedModal" class="popup-modal">
-        <!--THIS IS IMPORTANT! to close the modal, the class name has to match the name given on the ID -->
-        <div id="btn-close-modal" class="close-animatedModal close-popup-modal"> <i class="ion-close-round"></i> </div>
-        <div class="clearfix"></div>
-        <div class="modal-content">
-            <div class="container">
-                <div class="portfolio-padding">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h2>Geschäfts Eines<br /> Web-Studios</h2>
-                        <div class="h-50"></div>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value.</p>
-                        <br />
-                        <br /> <img src="img/portfolio/02.jpg" alt="" class="img-responsive" />
-                        <br />
-                        <br />
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value. Quickly promote premium strategic theme areas vis-a-vis.</p>
-                        <p>Appropriately maintain standards compliant total linkage with cutting-edge action items. Enthusiastically create seamless synergy rather than excellent value.</p>
-                        <br />
-                        <br /> </div>
-                </div>
-            </div>
-        </div>
-    </div>
+ 
     <!-- jQuery -->
     <script src="{{asset('/portfolio/js/jquery.js')}}"></script>
     <!--  plugins  -->
